@@ -1,0 +1,9 @@
+﻿Name,Quantity,Component
+U1,1,Arduino Uno R3
+U2,1,PCF8574-based LCD 16x2 I2C (addr 0x27)
+SERVO1,1,Positional Micro Servo (kipas/wiper)
+M1,1,Hobby Gearmotor (DC fan motor)
+S1,1,Pushbutton ON
+S2,1,Pushbutton OFF
+Rpot1,1,10 kΩ Potentiometer (speed control)
+LED1,1,Blue LED + 220 Ω resistor (status)

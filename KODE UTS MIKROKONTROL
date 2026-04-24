@@ -1,0 +1,74 @@
+#include <LiquidCrystal_I2C.h>
+#include <Servo.h>
+
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+Servo myServo;
+
+const int buttonOn = 4;      // tombol ON
+const int buttonOff = 5;     // tombol OFF
+const int motorPin = 10;     // motor DC via PWM
+const int ledPin = 2;        // LED indikator
+const int servoPin = 9;      // servo signal
+
+bool motorOn = false;
+int servoAngle = 0;
+int servoDir = 1; // 1 = maju, -1 = mundur
+
+void setup() {
+  lcd.init();
+  lcd.backlight();
+  lcd.setCursor(0,0);
+  lcd.print("Smart Fan");
+
+  pinMode(buttonOn, INPUT_PULLUP);
+  pinMode(buttonOff, INPUT_PULLUP);
+  pinMode(motorPin, OUTPUT);
+  pinMode(ledPin, OUTPUT);
+
+  myServo.attach(servoPin);
+
+  analogWrite(motorPin, 0); // motor mati awal
+  digitalWrite(ledPin, LOW);
+  myServo.write(0); // posisi awal servo
+}
+
+void loop() {
+  // Tombol ON
+  if (digitalRead(buttonOn) == LOW) {
+    motorOn = true;
+    delay(200); // debounce
+  }
+
+  // Tombol OFF
+  if (digitalRead(buttonOff) == LOW) {
+    motorOn = false;
+    delay(200); // debounce
+  }
+
+  if (motorOn) {
+    analogWrite(motorPin, 255); // motor DC ON penuh
+    digitalWrite(ledPin, HIGH);
+
+    // Servo bolak‑balik 0–180°
+    myServo.write(servoAngle);
+    servoAngle += servoDir;
+
+    if (servoAngle >= 180) servoDir = -1;
+    if (servoAngle <= 0) servoDir = 1;
+
+    delay(15); // kecepatan gerakan servo
+
+    lcd.setCursor(0,1);
+    lcd.print("Motor ON Servo:");
+    lcd.print(servoAngle);
+    lcd.print("   ");
+  } else {
+    analogWrite(motorPin, 0);
+    digitalWrite(ledPin, LOW);
+    // Servo tidak di-reset, tetap di posisi terakhir
+    lcd.setCursor(0,1);
+    lcd.print("Motor OFF Servo:");
+    lcd.print(servoAngle);
+    lcd.print("   ");
+  }
+}

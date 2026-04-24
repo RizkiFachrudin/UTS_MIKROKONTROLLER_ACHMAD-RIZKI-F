@@ -31,7 +31,7 @@
 ---
 
 ## Project Documentation
-* **Source Code:** [Code.ino](src/SmartFanUnoR3.ino)
+* **Source Code:** [Code.ino](https://github.com/RizkiFachrudin/UTS_MIKROKONTROLLER_ACHMAD-RIZKI-F/blob/main/KODE%20UTS%20MIKROKONTROL)
 * **Circuit Schematic:** [Wiring Diagram](docs/wiring.png)
 * **Simulation Video:** [Demo Video](docs/demo.mp4)
 * **Cirkit Designer IDE:** [Try Simulation](https://app.cirkitdesigner.com/project/01d0b176-fb64-4b72-b61e-f3bd2cb71a0e)

@@ -33,7 +33,7 @@
 ## Project Documentation
 * **Source Code:** [Code.ino](https://github.com/RizkiFachrudin/UTS_MIKROKONTROLLER_ACHMAD-RIZKI-F/blob/main/KODE%20UTS%20MIKROKONTROL)
 * **Circuit Schematic:** [Wiring Diagram](<img width="1190" height="728" alt="Image" src="https://github.com/user-attachments/assets/8f43ebff-8844-47ba-a20c-e8b831f1cf16" />)
-* **Simulation Video:** [Demo Video](docs/demo.mp4)
+* **Simulation Video:** [Demo Video](https://github.com/RizkiFachrudin/UTS_MIKROKONTROLLER_ACHMAD-RIZKI-F/blob/main/VIDEO%20PRAKTEK%20UTS%20MIKROKONTROL.mp4)
 * **Cirkit Designer IDE:** [Try Simulation](https://app.cirkitdesigner.com/project/01d0b176-fb64-4b72-b61e-f3bd2cb71a0e)
 
 ---
